@@ -1,0 +1,27 @@
+h1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  font-family: monospace;
+}
+
+button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 10%;
+  background-color: limegreen;
+  border-color: green;
+  border-width: 10px;
+  border-style: solid;
+  font-size: 50px;
+  border-radius: 90px;
+}
+
+button:hover {
+  color: white;
+  background-color: green;
+  border-color: limegreen;
+}
