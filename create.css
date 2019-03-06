@@ -6,7 +6,7 @@ h1 {
   font-family: monospace;
 }
 
-button {
+button#rip {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -24,4 +24,19 @@ button:hover {
   color: white;
   background-color: green;
   border-color: limegreen;
+}
+
+img#meme {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+input.opt {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 10%;
 }
