@@ -1,3 +1,11 @@
+html#page2 {
+  background: url(https://mondrian.mashable.com/2016%252F09%252F22%252Fb5%252F592857175_640.73223.jpg%252F1200x627.jpg?signature=W_FYQqlo9P7a_tVY4eaENEBeCcA=) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 h1#fight {
   display: inline-block;
   margin-left: auto;
