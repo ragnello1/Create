@@ -1,20 +1,54 @@
-function start() {
-  var elem = document.getElementById('rip');
-      elem.parentNode.removeChild(elem);
-    yah();
+var playerHealth = 100;
+var enemyHealth = Math.floor(Math.random() * 300) + 500;
+var attackNum;
+var specialNum;
+var used = 0;
+var victory = false;
+console.log("STARTING ENEMY HEALTH:", enemyHealth);
+console.log(used);
+
+function attack() {
+  if (used == 0 && victory == false) {
+  console.log("attack");
+  attackNum = Math.floor(Math.random() * 20) + 21;
+  if (attackNum > 39) {
+    console.log("CRITICAL DAMAGE!");
+    attackNum = 70;
+  }
+  enemyHealth = enemyHealth - attackNum;
+  console.log(enemyHealth, attackNum);
+    if (enemyHealth <= 0) {
+      win();
+    } else {
+      used = 1;
+    }
+  }
 }
 
-function yah() {
-  var img = document.createElement("IMG");
-  img.setAttribute("src", "https://i.amz.mshcdn.com/URoBdfh6G_-o8lNaH620WvL2YaM=/1200x627/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fstory%2Fthumbnail%2F21738%2F592857175_640.jpg");
-  img.setAttribute("id", "meme");
-  document.getElementById("image").appendChild(img);
-  buttons();
+function special() {
+  if (used == 0 && victory == false) {
+  console.log("special");
+  specialNum = Math.floor(Math.random() * 20) + 80;
+  enemyHealth = enemyHealth - specialNum;
+  console.log(enemyHealth, specialNum);
+    if (enemyHealth <= 0) {
+      win();
+    } else {
+      used = 1;
+    }
+  }
 }
 
-function buttons() {
-  var butt = document.createElement("input");
-  butt.type = "button";
-  butt.className = "opt";
-  document.getElementById("buttons").appendChild(butt);
+function item() {
+  console.log("item");
+}
+
+function win() {
+  console.log("YOU WIN!");
+  victory = true;
+}
+
+function ok() {
+  used = 0;
+  console.log(used);
 }

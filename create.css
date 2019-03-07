@@ -1,3 +1,11 @@
+h1#fight {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  font-family: monospace;
+}
+
 h1 {
   display: block;
   margin-left: auto;
@@ -20,7 +28,7 @@ button#rip {
   border-radius: 90px;
 }
 
-button:hover {
+button#rip:hover {
   color: white;
   background-color: green;
   border-color: limegreen;
@@ -33,10 +41,29 @@ img#meme {
   width: 50%;
 }
 
-input.opt {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+div {
+  text-align: center;
+}
+
+button.opt {
+  width: 20%;
   height: 10%;
+  background-color: black;
+  color: white;
+  border-color: gray;
+  border-width: thick;
+}
+
+button#rest {
+  float: left;
+  background-color: red;
+  color: white;
+  border-color: darkred;
+  border-width: thin;
+}
+
+button#ok {
+  background-color: limegreen;
+  border-color: darkgreen;
+  border-width: thick;
 }
