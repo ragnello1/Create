@@ -10,7 +10,7 @@ var used = 0;
 var victory = false;
 var miss;
 console.log("STARTING ENEMY HEALTH:", enemyHealth);
-console.log("SARTING PLAYER HEALTH:", playerHealth);
+console.log("STARTING PLAYER HEALTH:", playerHealth);
 
 //ATTACK
 
@@ -104,6 +104,8 @@ function enemyAttack() {
     }
   }
 }
+
+//OTHER
 
 function win() {
   console.log("YOU WIN!");
