@@ -1,9 +1,11 @@
 html#page2 {
-  background: url(https://mondrian.mashable.com/2016%252F09%252F22%252Fb5%252F592857175_640.73223.jpg%252F1200x627.jpg?signature=W_FYQqlo9P7a_tVY4eaENEBeCcA=) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: gray;
+}
+
+div#bottom {
+  position: fixed;
+  bottom: 100px;
+  width: 100%;
 }
 
 h1#fight {
@@ -20,6 +22,32 @@ h1 {
   margin-right: auto;
   width: 40%;
   font-family: monospace;
+}
+
+div#textbox {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  font-family: monospace;
+  text-align: left;
+  font-size: 25px;
+  word-wrap: break-word;
+
+}
+
+p#out {
+  padding-left: 10px;
+
+}
+
+div#textbox2 {
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  border: solid;
+  overflow-y: scroll;
+  text-align: left;
 }
 
 button#rip {
@@ -55,10 +83,12 @@ div {
 
 button.opt {
   width: 20%;
-  height: 10%;
-  background-color: black;
-  color: white;
-  border-color: gray;
+  height: 70px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: lightgray;
   border-width: thick;
 }
 
@@ -67,11 +97,14 @@ button#rest {
   background-color: red;
   color: white;
   border-color: darkred;
-  border-width: thin;
+  border-width: medium;
+  border-style: double;
 }
 
 button#ok {
   background-color: limegreen;
   border-color: darkgreen;
+  border-style: solid;
   border-width: thick;
+  border-radius: 10px;
 }

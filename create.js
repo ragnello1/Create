@@ -19,23 +19,25 @@ function attack() {
   console.log("normal attack");
   attackNum = Math.floor(Math.random() * 20) + 21;
   miss = Math.floor(Math.random()*100) + 1;
-  console.log(miss);
   if (miss <= 15) {
     console.log("MISS! LOSE A TURN!");
+    document.getElementById("out").innerHTML = "MISS! LOSE YOUR TURN!";
     used = 1;
-    enemyAttack();
+  setTimeout(enemyAttack, 2000);
   } else {
     if (attackNum > 39) {
       console.log("CRITICAL DAMAGE!");
+      document.getElementById("out").innerHTML = "CRITICAL DAMAGE! DAMAGE DEALT:" + attackNum;
       attackNum = 70;
     }
     enemyHealth = enemyHealth - attackNum;
     console.log("ENEMY HEALTH REMAINING", enemyHealth, "DAMAGE DEALT", attackNum);
+    document.getElementById("out").innerHTML= "DAMAGE DEALT:" + attackNum;
       if (enemyHealth <= 0) {
         win();
       } else {
         used = 1;
-        enemyAttack();
+      setTimeout(enemyAttack, 2000);
       }
     }
   }
@@ -56,12 +58,12 @@ function special() {
           specialVal = specialVal - 2;
           console.log("SPECIAL REMAINING:", specialVal);
           used = 1;
-          enemyAttack();
+      setTimeout(enemyAttack, 2000);
         }
       } else {
         console.log("SPECIAL EMPTY")
         used = 1;
-        enemyAttack();
+      setTimeout(enemyAttack, 2000);
       }
     }
 
@@ -84,7 +86,7 @@ function item() {
       console.log("NOT ENOUGH POTIONS");
     }
     used = 1;
-    enemyAttack();
+    setTimeout(enemyAttack, 2000);
   }
 }
 
@@ -92,7 +94,6 @@ function item() {
 
 function enemyAttack() {
   miss = Math.floor(Math.random()*100) + 1;
-  console.log(miss);
   if (miss <= 15) {
     console.log("ENEMY MISSED!");
   } else {
@@ -115,6 +116,7 @@ function win() {
 function lose() {
   console.log("YOU LOSE!");
   victory = true;
+  tata();
 }
 
 function ok() {
