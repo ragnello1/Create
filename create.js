@@ -9,6 +9,7 @@ var potions = 5;
 var used = 0;
 var victory = false;
 var miss;
+var enemyUsed = 1;
 console.log("STARTING ENEMY HEALTH:", enemyHealth);
 console.log("STARTING PLAYER HEALTH:", playerHealth);
 
@@ -28,11 +29,13 @@ function attack() {
     if (attackNum > 39) {
       console.log("CRITICAL DAMAGE!");
       document.getElementById("out").innerHTML = "CRITICAL DAMAGE! DAMAGE DEALT:" + attackNum;
+
       attackNum = 70;
     }
     enemyHealth = enemyHealth - attackNum;
     console.log("ENEMY HEALTH REMAINING", enemyHealth, "DAMAGE DEALT", attackNum);
-    document.getElementById("out").innerHTML= "DAMAGE DEALT:" + attackNum;
+    document.getElementById("out").innerHTML= "HIT! DAMAGE DEALT:" + attackNum;
+    document.getElementById("enemyinfo").innerHTML= "Enemy Health:" + enemyHealth;
       if (enemyHealth <= 0) {
         win();
       } else {
@@ -51,6 +54,8 @@ function special() {
         console.log("special attack");
         specialNum = Math.floor(Math.random() * 20) + 80;
         enemyHealth = enemyHealth - specialNum;
+        document.getElementById("out").innerHTML= "SPECIAL ATTACK! DAMAGE DEALT:" + specialNum;
+        document.getElementById("enemyinfo").innerHTML= "Enemy Health:" + enemyHealth;
         console.log("ENEMY HEALTH REMAINING:", enemyHealth, "SPECIAL DAMAGE DEALT:", specialNum);
         if (enemyHealth <= 0) {
           win();
@@ -75,10 +80,12 @@ function item() {
   if (used == 0 && victory == false) {
     if (potions > 0) {
       console.log("item");
+      document.getElementById("out").innerHTML= "YOU USED POTION! +50 HEALTH!";
       if (playerHealth + 50 > 100) {
         playerHealth = 100
         potions = potions - 1;
         console.log("HEALH MAXED OUT", "POTIONS REMAINING:", potions)
+        document.getElementById("out").innerHTML= "YOU USED POTION! HEALTH MAXED OUT";
       } else {
         playerHealth = playerHealth + 50;
       }
@@ -96,9 +103,11 @@ function enemyAttack() {
   miss = Math.floor(Math.random()*100) + 1;
   if (miss <= 15) {
     console.log("ENEMY MISSED!");
+    enemyUsed = 0;
   } else {
     damVal = Math.floor(Math.random() * 10) + 10;
     playerHealth = playerHealth - damVal;
+    enemyUsed = 0;
     console.log("ENEMY DAMAGE:", damVal, "HEALTH REMAINING:", playerHealth);
     if (playerHealth <= 0) {
       lose();
@@ -110,18 +119,20 @@ function enemyAttack() {
 
 function win() {
   console.log("YOU WIN!");
+  document.getElementById("out").innerHTML= "YOU WIN!";
   victory = true;
 }
 
 function lose() {
   console.log("YOU LOSE!");
+  document.getElementById("out").innerHTML= "YOU LOSE!";
   victory = true;
-  tata();
 }
 
 function ok() {
-  if (used == 1) {
+  if (used == 1 && enemyUsed == 0) {
     used = 0;
+    enemyUsed = 1;
     console.log("IT IS NOW YOUR TURN");
   }
 }

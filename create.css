@@ -1,5 +1,6 @@
 html#page2 {
-  background-color: gray;
+  background: url(https://i.pinimg.com/originals/f3/64/b7/f364b7d0a49566891789d291b8b2e53f.png);
+  background-size: cover;
 }
 
 div#bottom {
@@ -28,7 +29,7 @@ div#textbox {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
+  width: 60%;
   font-family: monospace;
   text-align: left;
   font-size: 25px;
@@ -41,9 +42,16 @@ p#out {
 
 }
 
+img#enemyimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}
+
 div#textbox2 {
   width: 100%;
-  height: 200px;
+  height: 150px;
   background-color: white;
   border: solid;
   overflow-y: scroll;
