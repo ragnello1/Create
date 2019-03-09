@@ -23,16 +23,18 @@
 <br>
   <img id="enemyimg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Peta_logo.svg/1200px-Peta_logo.svg.png"></img>
   <br>
-  <p align="center" id="enemyinfo"></p>
+  <p align="center" id="enemyinfo"><script>document.write("Enemy Health: " + enemyHealth);</script></p>
 <div id="bottom">
   <div id="buttons">
     <button onclick="special()" class="opt"><b>SPECIAL</b></button>
     <button onclick="attack()"class="opt"><b>ATTACK</b></button>
     <button onclick="item()"class="opt"><b>ITEM</b></button>
+    <br>
   </div>
 <br>
   <div id="ok">
     <button onclick="ok()" id="ok">OK</button>
+    <p id="healthdata"><script>Health Remaining: 100</p>
   </div>
 </div>
 </body>

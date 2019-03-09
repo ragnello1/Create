@@ -85,6 +85,16 @@ img#meme {
   width: 50%;
 }
 
+p#healthdata {
+
+}
+
+div#ok {
+  text-align: center;
+  height: 100px;
+  vertical-align: top;
+}
+
 div {
   text-align: center;
 }
