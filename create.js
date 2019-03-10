@@ -62,6 +62,7 @@ function special() {
         } else {
           specialVal = specialVal - 2;
           console.log("SPECIAL REMAINING: ", specialVal);
+          document.getElementById("stat1").innerHTML= specialVal + "&nbsp" + "SP" ;
           used = 1;
         }
       } else {
@@ -84,9 +85,11 @@ function item() {
         potions = potions - 1;
         console.log("HEALH MAXED OUT", "POTIONS REMAINING: ", potions)
         document.getElementById("out").innerHTML= "YOU USED POTION! HEALTH MAXED OUT";
+        document.getElementById("stat2").innerHTML= "Potions: " + potions;
         document.getElementById("healthdata").innerHTML= "Health Remaining: " + playerHealth;
       } else {
         playerHealth = playerHealth + 50;
+        document.getElementById("stat2").innerHTML= "Potions: " + potions;
       }
     } else {
       console.log("NOT ENOUGH POTIONS");
